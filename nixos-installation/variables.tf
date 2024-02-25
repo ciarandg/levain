@@ -15,18 +15,6 @@ variable "install_user_ssh_private_key" {
   type = string
   sensitive = false
 }
-variable "install_extra_files_script" {
-  description = <<-EOT
-  The filename of a script that, when run, writes files to the working directory.
-
-  This script will run on the provisioning machine, and then the output files
-  will be copied over to the root directory on the remote host before install.
-  Use this for passing secrets to the NixOS machine without putting them in the
-  Nix store.
-  EOT
-  type = string
-  default = null
-}
 
 variable "user_profile" {
   description = "User profile after install (the primary user on this NixOS install)"
@@ -39,4 +27,16 @@ variable "user_ssh_private_key" {
   description = "The private key to authenticate with after install"
   type = string
   sensitive = false
+}
+
+variable "extra_files" {
+  description = <<-EOT
+  A list of file names and contents that will be copied into the root directory of
+  the node. Use this for passing secrets to the NixOS machine without putting them
+  in the Nix store.
+  EOT
+  type = list(object({
+    filename = string
+    contents = string
+  }))
 }
