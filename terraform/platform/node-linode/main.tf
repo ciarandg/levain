@@ -17,5 +17,15 @@ module "nixos-installation" {
     ssh_host = module.instance.ip_address
   }
   user_ssh_private_key = var.ssh_private_key
+  extra_files = [
+    {
+      filename = "nixos_hashed_password"
+      contents = sha512("password")
+    },
+    {
+      filename = "nixos_authorized_keys"
+      contents = "TODO"
+    }
+  ]
   depends_on = [module.instance]
 }

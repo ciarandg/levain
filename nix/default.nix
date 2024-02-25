@@ -1,3 +1,6 @@
 {...}: {
-  imports = [./hardware];
+  imports = [
+    ./hardware
+    ./users
+  ];
 }
