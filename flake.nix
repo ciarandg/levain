@@ -3,10 +3,10 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = {self, ...}: {
+  outputs = {...}: {
     nixosModules = {
-      hardware-linode = import ./nix/hardware/linode.nix;
-      hardware-digitalocean-droplet = import ./nix/hardware/digitalocean-droplet;
+      hardware-linode = import ./nix/hardware/linode;
+      hardware-digitalocean-droplet = import ./nix/hardware/digitalocean;
     };
   };
 }
