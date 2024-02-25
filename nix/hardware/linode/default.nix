@@ -2,15 +2,10 @@
   config,
   lib,
   pkgs,
-  modulesPath,
   ...
 }: let
   cfg = config.levain.hardware.linode;
 in {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
-
   options = {
     levain.hardware.linode = {
       enable = lib.mkEnableOption {
@@ -19,7 +14,11 @@ in {
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
+    # Taken from https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/installer/scan/not-detected.nix
+    # Not imported via modulesPath, since NixOS modules don't support conditional imports
+    hardware.enableRedistributableFirmware = lib.mkDefault true;
+
     boot.initrd.availableKernelModules = ["virtio_pci" "virtio_scsi" "ahci" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = [];
