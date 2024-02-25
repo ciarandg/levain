@@ -21,7 +21,7 @@ module "install" {
   source = "github.com/nix-community/nixos-anywhere//terraform/install?ref=1.1.0"
   target_host = var.install_user_profile.ssh_host
   target_user = var.install_user_profile.username
-  extra_files_script = local_sensitive_file.extra_files_script
+  extra_files_script = local_sensitive_file.extra_files_script.filename
   nixos_partitioner = module.partitioner.result.out
   nixos_system = module.system.result.out
   ssh_private_key = var.install_user_ssh_private_key
