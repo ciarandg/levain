@@ -24,7 +24,7 @@ module "nixos-installation" {
     },
     {
       filename = "nixos_authorized_keys"
-      contents = "TODO"
+      contents = var.ssh_public_key
     }
   ]
   depends_on = [module.instance]
