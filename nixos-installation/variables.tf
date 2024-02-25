@@ -39,4 +39,5 @@ variable "extra_files" {
     filename = string
     contents = string
   }))
+  default = []
 }
