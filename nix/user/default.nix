@@ -12,7 +12,7 @@ in {
       mutableUsers = false;
       users.nixos = {
         hashedPasswordFile = "/nixos_hashed_password";
-        extraGroups = ["wheel" "sudo"];
+        extraGroups = ["wheel" "sudo" "podman" "docker"];
         isNormalUser = true;
         openssh.authorizedKeys.keys = cfg.authorizedKeys;
       };
