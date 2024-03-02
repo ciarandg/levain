@@ -4,7 +4,7 @@ in {
   options = {
     levain.user.authorizedKeys = lib.mkOption {
       description = "A list of SSH public keys to connect to this instance with";
-      type = lib.types.listOf lib.str;
+      type = lib.types.listOf lib.types.str;
     };
   };
   config = {
