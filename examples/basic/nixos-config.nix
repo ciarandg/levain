@@ -4,6 +4,7 @@
 }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./services.nix
   ];
 
   config = {
@@ -20,8 +21,6 @@
     networking.useDHCP = true;
 
     security.sudo.wheelNeedsPassword = false;
-
-    services.nginx.enable = true;
 
     services.openssh = {
       enable = true;
