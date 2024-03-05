@@ -1,3 +1,8 @@
+###############################################
+# PLEASE NOTE: These are just example values. #
+# You SHOULD NOT use any of them verbatim!!!  #
+###############################################
+
 linode_token = "1f229b75d7630035395812d9a375407781cad9da4148df91d8ece6ed40c356e1"
 ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHw1Sn/UDAG1IoXMUiN+kuM9aiSub+t8kE6yUXlp76nY admin@pc"
 ssh_private_key = <<-EOT
