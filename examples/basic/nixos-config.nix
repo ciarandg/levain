@@ -11,6 +11,7 @@
     levain = {
       hardware.linode.enable = true;
       user.authorizedKeys = [
+        # Put the contents of your public key here!
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKPiQGm1ZXWXa6mIwMHqlNaMiSMfK0UjVc8LZ7VhjmM admin@pc"
       ];
     };
