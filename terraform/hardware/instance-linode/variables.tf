@@ -1,3 +1,7 @@
+variable linode_name {
+    type = string
+}
+
 variable env_suffix {
     type = string
 }

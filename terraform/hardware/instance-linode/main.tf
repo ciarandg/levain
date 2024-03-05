@@ -1,5 +1,5 @@
 resource "linode_instance" "machine" {
-  label = "monitoring${var.env_suffix}"
+  label = "${var.linode_name}${var.env_suffix}"
   region = "us-southeast"
   type   = "g6-standard-1"
 }

@@ -1,5 +1,6 @@
 module "instance" {
   source = "../../hardware/instance-linode"
+  linode_name = var.nixos_config_name
   env_suffix = var.env_suffix
   ssh_public_key = var.ssh_public_key
 }
