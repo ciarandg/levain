@@ -14,8 +14,8 @@ significant overhead.
 Currently, Levain only supports Linode. There is some preliminary work
 already done to support DigitalOcean, but this is hampered by the need
 for dynamically generated networking configuration (see
-`nix/hardware/digitalocean/default.nix`). Next up: Hetzner, Vultr, and
-Scaleway.
+`nix/hardware/digitalocean/default.nix`). Next up: `fly.io`, Hetzner,
+Vultr, and Scaleway.
 
 ## Documentation
 
