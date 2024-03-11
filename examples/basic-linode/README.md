@@ -14,7 +14,7 @@ server.
 5. `tofu apply`
 
 That's it! Connect to your newly provisioned machine:
-```
+```sh
 IP_ADDRESS=$(tofu output -raw ip_address)
 ssh -i example_ed25519 nixos@$IP_ADDRESS
 ```
