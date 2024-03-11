@@ -3,28 +3,19 @@
 This example bootstraps a NixOS install running an unconfigured Nginx
 server.
 
-## Setup Steps
+## Setup Steps (Scripted)
 
 1. `git clone git@github.com:ciarandg/levain.git`
 2. `cd levain/examples/basic-linode`
-4. `ssh-keygen -t ed25519 -P "" -f ./example_ed25519`
-   - Generates a keypair using `ed25519` encryption (this is also
-       currently the default) with no passphrase
-5. Paste the contents of `example_ed25519.pub` in the
-   `config.levain.user.authorizedKeys` list in `nixos-config.nix`
-3. `cp terraform.tfvars.example terraform.tfvars`
-6. Generate a Linode API token, then replace the example value in
-   `terraform.tfvars` with it
-   - Minimum token permissions:
-     - `Events` read-only
-     - `Linodes` read-write
-   - https://cloud.linode.com/profile/tokens or use the CLI
-7. `terraform init`
-8. `terraform apply`
+3. `./bootstrap.nu`
+4. As indicated by the script output, paste the contents of
+   `example_ed25519.pub` in the `config.levain.user.authorizedKeys` list
+   in `nixos-config.nix`
+5. `tofu apply`
 
 That's it! Connect to your newly provisioned machine:
 ```
-IP_ADDRESS=$(terraform output -raw ip_address)
+IP_ADDRESS=$(tofu output -raw ip_address)
 ssh -i example_ed25519 nixos@$IP_ADDRESS
 ```
 ## Potential Next Steps
