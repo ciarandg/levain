@@ -1,5 +1,5 @@
 {...}: {
   config = {
-    services.nginx.enable = true;
+    services.httpd.enable = true;
   };
 }
