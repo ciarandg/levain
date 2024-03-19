@@ -19,6 +19,8 @@
 
     system.stateVersion = "23.11";
 
+    nix.settings.trusted-users = ["nixos"];
+
     networking.firewall.enable = false;
     networking.useDHCP = true;
 
